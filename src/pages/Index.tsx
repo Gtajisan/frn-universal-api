@@ -56,10 +56,10 @@ const Index = () => {
               </Button>
               <div>
                 <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  Wataru API
+                  FRN API
                 </h1>
                 <p className="text-xs text-muted-foreground">
-                  Modern API Documentation & Testing Interface
+                  Free REST API Collection
                 </p>
               </div>
             </div>

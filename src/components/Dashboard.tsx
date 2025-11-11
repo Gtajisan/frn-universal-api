@@ -1,5 +1,6 @@
-import { Activity, Code2, Layers, TrendingUp } from "lucide-react";
+import { Activity, Layers, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Credits } from "./Credits";
 
 interface DashboardProps {
   totalEndpoints: number;
@@ -9,11 +10,14 @@ interface DashboardProps {
 
 export function Dashboard({ totalEndpoints, categories, methodBreakdown }: DashboardProps) {
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-3xl font-bold text-foreground mb-2">API Dashboard</h2>
-        <p className="text-muted-foreground">
-          Welcome to the Wataru API documentation and testing interface
+    <div className="space-y-8 animate-fade-in">
+      <div className="text-center space-y-4">
+        <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+          FRN API Collection
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          A comprehensive collection of free REST APIs aggregated from multiple open-source repositories. 
+          Explore and test {totalEndpoints} endpoints across {categories} categories.
         </p>
       </div>
 
@@ -21,7 +25,7 @@ export function Dashboard({ totalEndpoints, categories, methodBreakdown }: Dashb
         <Card className="bg-card border-border hover:shadow-lg transition-shadow">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Total Endpoints</CardTitle>
-            <Code2 className="h-4 w-4 text-primary" />
+            <Activity className="h-4 w-4 text-primary" />
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold text-foreground">{totalEndpoints}</div>
@@ -140,6 +144,8 @@ export function Dashboard({ totalEndpoints, categories, methodBreakdown }: Dashb
           </div>
         </CardContent>
       </Card>
+
+      <Credits />
     </div>
   );
 }
